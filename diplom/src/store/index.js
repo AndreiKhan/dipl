@@ -1,0 +1,540 @@
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+    state: {
+        dishes: [
+            {
+                id: 1,
+                img: 'dish1.jpg',
+                kitchen: 'Итальянская',
+                name: 'Лазанья',
+                shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, est!',
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae temporibus exercitationem repellat explicabo, unde dolor saepe blanditiis fuga cumque natus laudantium ducimus mollitia facere harum rem maxime libero quia veniam error est minima! Omnis repudiandae recusandae pariatur, perferendis asperiores qui.',
+                comments: [{
+                    name: 'Иван',
+                    date: '21.02.2023',
+                    img: 'avatar1.jpg',
+                    comment: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus porro assumenda repudiandae iure sunt saepe odit qui accusantium voluptatum minima.',
+                    likes: 23,
+                    dislikes: 76,
+                },
+                {
+                    name: 'Анастасия',
+                    date: '21.02.2023',
+                    img: 'avatar2.jpg',
+                    comment: 'Lorem ipsum dolor sit amet.',
+                    likes: 12,
+                    dislikes: 0,
+                },
+                {
+                    name: 'Дима',
+                    date: '21.02.2023',
+                    img: 'avatar3.jpg',
+                    comment: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic veniam ex consectetur in aliquam sint!labla',
+                    likes: 87,
+                    dislikes: 0,
+                },],
+                locations: [{
+                    creator: 'Иван',
+                    house: '67',
+                    street: 'Крашина',
+                    city: 'Москва',
+                    name: 'KFC',
+                    delivery: false,
+                    likes: 23,
+                    dislikes: 23,
+                    img: 'cafe1.jpg',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto repellendus reprehenderit voluptatum consectetur illum ex maiores, a rem quidem quod autem error cum ducimus perspiciatis, aliquid corrupti in mollitia ipsum.',
+                },
+                {
+                    creator: 'Владимир',
+                    house: '28',
+                    street: 'Пушкина',
+                    city: 'Новосибирск',
+                    name: 'Додо',
+                    delivery: true,
+                    likes: 15,
+                    dislikes: 2,
+                    img: 'cafe2.jpg',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate maiores facere temporibus dolores deserunt eos quod cumque odit fuga mollitia!',
+                },
+                {
+                    creator: 'Алексей',
+                    house: '9',
+                    street: 'Газовиков',
+                    city: 'Тюмень',
+                    name: 'Как мы любим',
+                    delivery: true,
+                    likes: 0,
+                    dislikes: 0,
+                    img: 'cafe3.jpg',
+                    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, non?',
+                },],
+                likes: 0,
+                dislikes: 0,
+            },
+            {
+                id: 2,
+                img: 'dish2.jpg',
+                kitchen: 'Азиатская',
+                name: 'Том Ям',
+                shortDescription: 'Lorem ipsum dolor sit amet.',
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consequatur quia rem mollitia adipisci quasi sequi nostrum voluptates magnam aspernatur a, esse itaque ducimus aperiam. Itaque ullam aperiam earum ducimus?',
+                comments: [{
+                    name: 'Максим',
+                    date: '23.05.2017',
+                    img: 'avatar4.jpg',
+                    comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore necessitatibus vel consequuntur. Vero voluptates nesciunt provident laborum molestias non fugit nam eum iusto excepturi, ipsa ab odio cum tenetur iste sit nemo incidunt illum accusantium distinctio necessitatibus id amet reiciendis?',
+                    likes: 178,
+                    dislikes: 4,
+                },
+                {
+                    name: 'Владислав',
+                    date: '09.10.2022',
+                    img: 'avatar5.jpg',
+                    comment: 'Lorem, ipsum dolor.',
+                    likes: 566,
+                    dislikes: 0,
+                },
+                {
+                    name: 'Александр',
+                    date: '11.01.2023',
+                    img: 'avatar6.jpg',
+                    comment: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut non enim ipsam accusantium similique culpa dolore ducimus exercitationem alias impedit? Iste voluptatum deserunt alias sint necessitatibus aliquid veritatis quasi ipsa!',
+                    likes: 0,
+                    dislikes: 78,
+                },],
+                locations: [{
+                    creator: 'Наталья',
+                    house: '78',
+                    street: 'Мельникайте',
+                    city: 'Киев',
+                    name: 'Пельмень',
+                    delivery: true,
+                    likes: 67,
+                    dislikes: 67,
+                    img: 'cafe4.jpg',
+                    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus eum incidunt laboriosam ex, cum eaque pariatur inventore quisquam odit vero, in dolor. Quod, laboriosam? Enim commodi voluptatibus voluptates illo sint pariatur repellendus, illum ducimus.',
+                },
+                {
+                    creator: 'Валерия',
+                    house: '67',
+                    street: 'Орникидзе',
+                    city: 'Лондон',
+                    name: 'McDonalds',
+                    delivery: true,
+                    likes: 567,
+                    dislikes: 678,
+                    img: 'cafe5.jpg',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi error modi incidunt dolore possimus fugit perspiciatis eius exercitationem quibusdam libero, assumenda vero est aut dolor aliquam, veniam inventore dolorum omnis odit! Inventore iure, sed voluptates quos vero necessitatibus. Eos quod ullam dolores adipisci in laudantium autem veniam quos nostrum inventore.',
+                },
+                {
+                    creator: 'Джон',
+                    house: '8',
+                    street: 'Каменщиков',
+                    city: 'Сидней',
+                    name: 'KenGuru',
+                    delivery: true,
+                    likes: 78,
+                    dislikes: 43,
+                    img: 'cafe6.jpg',
+                    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, atque.',
+                },],
+                likes: 789,
+                dislikes: 150,
+            },
+            {
+                id: 3,
+                img: 'dish3.jpg',
+                kitchen: 'Армянская',
+                name: 'Долма',
+                shortDescription: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, atque.',
+                description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui dicta sed magni blanditiis itaque sapiente quo, reprehenderit tempora doloribus alias porro eveniet, excepturi suscipit minus unde ullam nulla assumenda aperiam ipsam officiis error? Corrupti explicabo commodi doloribus itaque est tenetur dicta? Laudantium unde illo illum excepturi rem reprehenderit expedita laborum.',
+                comments: [{
+                    name: 'Иван',
+                    date: '21.02.2023',
+                    img: 'avatar1.jpg',
+                    comment: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus porro assumenda repudiandae iure sunt saepe odit qui accusantium voluptatum minima.',
+                    likes: 23,
+                    dislikes: 76,
+                },
+                {
+                    name: 'Анастасия',
+                    date: '21.02.2023',
+                    img: 'avatar2.jpg',
+                    comment: 'Lorem ipsum dolor sit amet.',
+                    likes: 12,
+                    dislikes: 0,
+                },
+                {
+                    name: 'Дима',
+                    date: '21.02.2023',
+                    img: 'avatar3.jpg',
+                    comment: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic veniam ex consectetur in aliquam sint!labla',
+                    likes: 87,
+                    dislikes: 0,
+                },],
+                locations: [{
+                    creator: 'Иван',
+                    house: '67',
+                    street: 'Крашина',
+                    city: 'Москва',
+                    name: 'KFC',
+                    delivery: false,
+                    likes: 23,
+                    dislikes: 23,
+                    img: 'cafe1.jpg',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto repellendus reprehenderit voluptatum consectetur illum ex maiores, a rem quidem quod autem error cum ducimus perspiciatis, aliquid corrupti in mollitia ipsum.',
+                },
+                {
+                    creator: 'Владимир',
+                    house: '28',
+                    street: 'Пушкина',
+                    city: 'Новосибирск',
+                    name: 'Додо',
+                    delivery: true,
+                    likes: 15,
+                    dislikes: 2,
+                    img: 'cafe2.jpg',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate maiores facere temporibus dolores deserunt eos quod cumque odit fuga mollitia!',
+                },
+                {
+                    creator: 'Алексей',
+                    house: '9',
+                    street: 'Газовиков',
+                    city: 'Тюмень',
+                    name: 'Как мы любим',
+                    delivery: true,
+                    likes: 0,
+                    dislikes: 0,
+                    img: 'cafe3.jpg',
+                    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, non?',
+                },],
+                likes: 45,
+                dislikes: 567,
+            },
+            {
+                id: 4,
+                img: 'dish4.jpg',
+                kitchen: 'Европейская',
+                name: 'Ризотто',
+                shortDescription: 'Lorem ipsum dolor sit amet.',
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, repellat!',
+                comments: [{
+                    name: 'Максим',
+                    date: '23.05.2017',
+                    img: 'avatar4.jpg',
+                    comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore necessitatibus vel consequuntur. Vero voluptates nesciunt provident laborum molestias non fugit nam eum iusto excepturi, ipsa ab odio cum tenetur iste sit nemo incidunt illum accusantium distinctio necessitatibus id amet reiciendis?',
+                    likes: 178,
+                    dislikes: 4,
+                },
+                {
+                    name: 'Владислав',
+                    date: '09.10.2022',
+                    img: 'avatar5.jpg',
+                    comment: 'Lorem, ipsum dolor.',
+                    likes: 566,
+                    dislikes: 0,
+                },
+                {
+                    name: 'Александр',
+                    date: '11.01.2023',
+                    img: 'avatar6.jpg',
+                    comment: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut non enim ipsam accusantium similique culpa dolore ducimus exercitationem alias impedit? Iste voluptatum deserunt alias sint necessitatibus aliquid veritatis quasi ipsa!',
+                    likes: 0,
+                    dislikes: 78,
+                },],
+                locations: [{
+                    creator: 'Наталья',
+                    house: '78',
+                    street: 'Мельникайте',
+                    city: 'Киев',
+                    name: 'Пельмень',
+                    delivery: true,
+                    likes: 67,
+                    dislikes: 67,
+                    img: 'cafe4.jpg',
+                    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus eum incidunt laboriosam ex, cum eaque pariatur inventore quisquam odit vero, in dolor. Quod, laboriosam? Enim commodi voluptatibus voluptates illo sint pariatur repellendus, illum ducimus.',
+                },
+                {
+                    creator: 'Валерия',
+                    house: '67',
+                    street: 'Орникидзе',
+                    city: 'Лондон',
+                    name: 'McDonalds',
+                    delivery: true,
+                    likes: 567,
+                    dislikes: 678,
+                    img: 'cafe5.jpg',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi error modi incidunt dolore possimus fugit perspiciatis eius exercitationem quibusdam libero, assumenda vero est aut dolor aliquam, veniam inventore dolorum omnis odit! Inventore iure, sed voluptates quos vero necessitatibus. Eos quod ullam dolores adipisci in laudantium autem veniam quos nostrum inventore.',
+                },
+                {
+                    creator: 'Джон',
+                    house: '8',
+                    street: 'Каменщиков',
+                    city: 'Сидней',
+                    name: 'KenGuru',
+                    delivery: true,
+                    likes: 78,
+                    dislikes: 43,
+                    img: 'cafe6.jpg',
+                    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, atque.',
+                },],
+                likes: 0,
+                dislikes: 0,
+            },
+            {
+                id: 5,
+                img: 'dish5.jpg',
+                kitchen: 'Русская',
+                name: 'Курник',
+                shortDescription: 'Lorem ipsum dolor sit amet.',
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consequatur velit quaerat tempore sint, iure esse qui dignissimos, provident vero ab reprehenderit? Accusamus, obcaecati harum.',
+                comments: [{
+                    name: 'Иван',
+                    date: '21.02.2023',
+                    img: 'avatar1.jpg',
+                    comment: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus porro assumenda repudiandae iure sunt saepe odit qui accusantium voluptatum minima.',
+                    likes: 23,
+                    dislikes: 76,
+                },
+                {
+                    name: 'Анастасия',
+                    date: '21.02.2023',
+                    img: 'avatar2.jpg',
+                    comment: 'Lorem ipsum dolor sit amet.',
+                    likes: 12,
+                    dislikes: 0,
+                },
+                {
+                    name: 'Дима',
+                    date: '21.02.2023',
+                    img: 'avatar3.jpg',
+                    comment: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic veniam ex consectetur in aliquam sint!labla',
+                    likes: 87,
+                    dislikes: 0,
+                },],
+                locations: [{
+                    creator: 'Иван',
+                    house: '67',
+                    street: 'Крашина',
+                    city: 'Москва',
+                    name: 'KFC',
+                    delivery: false,
+                    likes: 23,
+                    dislikes: 23,
+                    img: 'cafe1.jpg',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto repellendus reprehenderit voluptatum consectetur illum ex maiores, a rem quidem quod autem error cum ducimus perspiciatis, aliquid corrupti in mollitia ipsum.',
+                },
+                {
+                    creator: 'Владимир',
+                    house: '28',
+                    street: 'Пушкина',
+                    city: 'Новосибирск',
+                    name: 'Додо',
+                    delivery: true,
+                    likes: 15,
+                    dislikes: 2,
+                    img: 'cafe2.jpg',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate maiores facere temporibus dolores deserunt eos quod cumque odit fuga mollitia!',
+                },
+                {
+                    creator: 'Алексей',
+                    house: '9',
+                    street: 'Газовиков',
+                    city: 'Тюмень',
+                    name: 'Как мы любим',
+                    delivery: true,
+                    likes: 0,
+                    dislikes: 0,
+                    img: 'cafe3.jpg',
+                    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, non?',
+                },],
+                likes: 890,
+                dislikes: 678,
+            },
+            {
+                id: 6,
+                img: 'dish6.jpg',
+                kitchen: 'Японская',
+                name: 'Креветки васаби',
+                shortDescription: 'Lorem ipsum dolor sit amet.',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, itaque nesciunt deleniti eius, voluptatibus sed necessitatibus dignissimos assumenda porro, enim quasi soluta veniam aliquid! Quo praesentium, magnam blanditiis rerum iste suscipit doloremque illum, sapiente, accusantium cupiditate deserunt hic repellat sequi aperiam facere repudiandae ratione maxime omnis.',
+                comments: [{
+                    name: 'Максим',
+                    date: '23.05.2017',
+                    img: 'avatar4.jpg',
+                    comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore necessitatibus vel consequuntur. Vero voluptates nesciunt provident laborum molestias non fugit nam eum iusto excepturi, ipsa ab odio cum tenetur iste sit nemo incidunt illum accusantium distinctio necessitatibus id amet reiciendis?',
+                    likes: 178,
+                    dislikes: 4,
+                },
+                {
+                    name: 'Владислав',
+                    date: '09.10.2022',
+                    img: 'avatar5.jpg',
+                    comment: 'Lorem, ipsum dolor.',
+                    likes: 566,
+                    dislikes: 0,
+                },
+                {
+                    name: 'Александр',
+                    date: '11.01.2023',
+                    img: 'avatar6.jpg',
+                    comment: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut non enim ipsam accusantium similique culpa dolore ducimus exercitationem alias impedit? Iste voluptatum deserunt alias sint necessitatibus aliquid veritatis quasi ipsa!',
+                    likes: 0,
+                    dislikes: 78,
+                },],
+                locations: [{
+                    creator: 'Наталья',
+                    house: '78',
+                    street: 'Мельникайте',
+                    city: 'Киев',
+                    name: 'Пельмень',
+                    delivery: true,
+                    likes: 67,
+                    dislikes: 67,
+                    img: 'cafe4.jpg',
+                    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus eum incidunt laboriosam ex, cum eaque pariatur inventore quisquam odit vero, in dolor. Quod, laboriosam? Enim commodi voluptatibus voluptates illo sint pariatur repellendus, illum ducimus.',
+                },
+                {
+                    creator: 'Валерия',
+                    house: '67',
+                    street: 'Орникидзе',
+                    city: 'Лондон',
+                    name: 'McDonalds',
+                    delivery: true,
+                    likes: 567,
+                    dislikes: 678,
+                    img: 'cafe5.jpg',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi error modi incidunt dolore possimus fugit perspiciatis eius exercitationem quibusdam libero, assumenda vero est aut dolor aliquam, veniam inventore dolorum omnis odit! Inventore iure, sed voluptates quos vero necessitatibus. Eos quod ullam dolores adipisci in laudantium autem veniam quos nostrum inventore.',
+                },
+                {
+                    creator: 'Джон',
+                    house: '8',
+                    street: 'Каменщиков',
+                    city: 'Сидней',
+                    name: 'KenGuru',
+                    delivery: true,
+                    likes: 78,
+                    dislikes: 43,
+                    img: 'cafe6.jpg',
+                    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, atque.',
+                },],
+                likes: 5367,
+                dislikes: 0,
+            },
+        ],
+
+        profiles: [{
+            login: 'login1',
+            password: 'password1',
+            name: 'name1',
+            email: 'email1',
+            phone: 'phone1',
+            city: 'city1',
+            img: 'avatar7.jpg',
+            description: 'description1',
+            addedLocations: 3,
+        },],
+
+        selectedKitchen: '',
+        searchingDish: '',
+        detailedDish: 1,
+        logged: '',
+    },
+
+    mutations: {
+        FILTERED_DISHES(state, {kitchen, dish}) {
+            if (kitchen == '') {
+                kitchen = '-'
+            }
+            if (dish == '') {
+                dish = '-'
+            }
+            state.selectedKitchen = kitchen
+            state.searchingDish = dish
+        },
+
+        DETAILED_DISH(state, dish) {
+            state.detailedDish = dish
+        },
+
+        REGISTR_USER(state, {login, password, name, email, phone, city,}) {
+            state.profiles.push({
+                login: login,
+                password: password,
+                name: name,
+                email: email,
+                phone: phone,
+                city: city,
+                img: 'news1.png',
+                description: '',
+                addedLocations: 0,
+            })
+            state.logged = name
+        },
+
+        SIGN_IN(state, {login, password}) {
+            state.profiles.forEach(item => {
+                if (item.login == login && item.password == password) {
+                    state.logged = item.name
+                }
+            });
+        },
+
+        SIGN_OUT(state) {
+            state.logged = ''
+        },
+
+        ADD_LOCATION(state, {name, city, street, house, description, delivery, locations}) {
+            locations.push({
+                creator: state.logged,
+                house: house,
+                street: street,
+                city: city,
+                name: name,
+                delivery: delivery,
+                likes: 0,
+                dislikes: 0,
+                img: 'cafe7.jpg',
+                description: description,
+            })
+        },
+
+        ADD_COMMENT(state, {comment, comments}) {
+            comments.push({
+                name: state.logged,
+                date: '07.02.2024',
+                img: 'avatar7.jpg',
+                comment: comment,
+                likes: 0,
+                dislikes: 0,
+            })
+        },
+
+        LIKE(state, obj) {
+            obj.likes += 1
+        },
+
+        DISLIKE(state, obj) {
+            obj.dislikes += 1
+        },
+    },
+
+    getters: {
+        filteredDishes(state) {
+            return state.dishes.filter(item => (item.kitchen.includes(state.selectedKitchen) || item.name.includes(state.searchingDish)))
+        },
+
+        descriptionDish(state) {
+            return state.dishes.find(item => item.id == state.detailedDish)
+        },
+
+        profile(state) {
+            return state.profiles.find(item => item.name == state.logged)
+        },
+    },
+})
