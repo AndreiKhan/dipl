@@ -4,8 +4,11 @@
         <main class="main">
             <section class="main_header">
                 <p class="main_header__text">
-                    ((Приветствие и объяснение как работает этот сайт))
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, quibusdam perferendis placeat nisi nobis porro similique illum, commodi, blanditiis doloribus ex nemo laborum quos quo exercitationem! Quasi voluptate ut necessitatibus distinctio, officiis consectetur beatae alias numquam id? Autem nesciunt enim libero eaque assumenda veniam, dicta perspiciatis nisi cupiditate delectus et. Accusamus consequuntur in facere, asperiores omnis repellendus assumenda inventore hic odio quibusdam dolore et quos, cumque non autem. Minus hic mollitia suscipit optio rem! Iste ex magni expedita! Nobis, repellendus itaque? Totam repellat consequuntur cum ab assumenda soluta sint eligendi asperiores debitis nulla molestiae, reiciendis dolorem, dolores, autem alias! Sequi.
+                    Добро пожаловать на сайт по поиску различных блюд. 
+                    Увидели где-то в своем любимом сериале или фильме интересное блюдо, и вам очень хочется его попробовать? 
+                    Тогда вы пришли в нужное место. Здесь вы сможете найти все, что вам нужно. Просто введите в поиске название этого блюда и(или) кухню. 
+                    После этого наш поиск поможет вам найти блюдо и покажет, в каких кафе в вашем городе вы можете попробовать его или заказать себе на дом. 
+                    Узнайте, какого на вкус то, что едят ваши любимые персонажи.
                 </p>
             </section>
             <DishCards/>
